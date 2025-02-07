@@ -4,9 +4,10 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>App</title>
+        <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
 
     </head>
-    <body>
+    <body class ='bg-sky-300'>
         <div id="root"></div>
         <script type="module">
             import  { h, createApp } from "./node_modules/vue/dist/vue.esm-browser.prod.js"
@@ -19,22 +20,22 @@
                     }
                 },
                 render(){
-                    // virtual dom
-                    return h('form',[
-                            h('div',[
-                                h('label',{attrs:{for:'Nom'}},'Nom:'),
-                                h('input', { attrs: { type: 'text', id: 'Nom', name: 'Nom' } })
-                            ]),
-                            h('div',[
-                                h('label',{attrs:{for:'Email'}},'Email:'),
-                                h('input', { attrs: { type: 'text', id: 'Email', name: 'Email' } })
-                            ]),
-                            h('div',[
-                                h('label',{attrs:{for:'Mot_de_passe'}},'Mot_de_passe:'),
-                                h('input', { attrs: { type: 'text', id: 'Mot_de_passe', name: 'Mot_de_passe' } })
-                            ])
-                    ])
-                }
+  return h('form', [
+    h('div', { class: 'mb-4' }, [
+      h('label', { attrs: { for: 'Nom' }}, 'Nom:'),
+      h('input', { attrs: { type: 'text', id: 'Nom', name: 'Nom' }, class: 'mt-1 block border border-gray-150 rounded-md shadow-sm sm:text-sm' })
+    ]),
+    h('div', { class: 'mb-4' }, [
+      h('label', { attrs: { for: 'Email' }}, 'Email:'),
+      h('input', { attrs: { type: 'text', id: 'Email', name: 'Email' }, class: 'mt-1 block border border-gray-150 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm' })
+    ]),
+    h('div', { class: 'mb-4' }, [
+      h('label', { attrs: { for: 'Mot_de_passe' }}, 'Mot de passe:'),
+      h('input', { attrs: { type: 'password', id: 'Mot_de_passe', name: 'Mot_de_passe' }, class: 'mt-1 block border border-gray-150 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm' })
+    ]),
+    h('button', { attrs: { type: 'submit' },class : 'bg-emerald-400 mt-1 block border border-gray-150 rounded-md' }, 'Envoyer') 
+  ])
+}
             }
 
 
