@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>App</title>
+
+    </head>
+    <body>
+        <div id="root"></div>
+        <script type="module">
+            import  { h, createApp } from "./node_modules/vue/dist/vue.esm-browser.prod.js"
+
+            const Login =  {
+                data(){
+                    return {
+                        username : "alex",
+                        password : "sarah"
+                    }
+                },
+                render(){
+                    // virtual dom
+                    return h('form',[
+                            h('div',[
+                                h('label',{attrs:{for:'Nom'}},'Nom:'),
+                                h('input', { attrs: { type: 'text', id: 'Nom', name: 'Nom' } })
+                            ]),
+                            h('div',[
+                                h('label',{attrs:{for:'Email'}},'Email:'),
+                                h('input', { attrs: { type: 'text', id: 'Email', name: 'Email' } })
+                            ]),
+                            h('div',[
+                                h('label',{attrs:{for:'Mot_de_passe'}},'Mot_de_passe:'),
+                                h('input', { attrs: { type: 'text', id: 'Mot_de_passe', name: 'Mot_de_passe' } })
+                            ])
+                    ])
+                }
+            }
+
+
+
+
+
+            createApp(Login).mount('#root')
+
+
+        </script>
+    </body>
+</html>
